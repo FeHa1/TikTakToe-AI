@@ -63,7 +63,7 @@ def best_move(board):
 def make_move(row, col):
     if board[row][col] == ' ':
         board[row][col] = 'X'
-        buttons[row][col].config(text='X')
+        buttons[row][col].config(text='X', bg='lightgreen')
         if check_winner(board, 'X'):
             messagebox.showinfo("Tic-Tac-Toe", "You win!")
             root.quit()
@@ -79,7 +79,7 @@ def make_move(row, col):
 def ai_move():
     row, col = best_move(board)
     board[row][col] = 'O'
-    buttons[row][col].config(text='O')
+    buttons[row][col].config(text='O', bg='lightcoral')
     if check_winner(board, 'O'):
         messagebox.showinfo("Tic-Tac-Toe", "AI wins!")
         root.quit()
